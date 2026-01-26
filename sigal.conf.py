@@ -173,7 +173,7 @@ ignore_files = []
 # -------------
 
 # Video converter binary (can be 'avconv' on certain GNU/Linux distributions)
-video_converter = 'ffmpeg'
+video_converter = 'C:\\Users\\jwelch\\AppData\\Local\\Microsoft\\WinGet\\Links\\ffmpeg.exe'
 
 # File extensions that should be treated as video files
 video_extensions = ['.mov', '.avi', '.mp4', '.webm', '.ogv', '.3gp']
