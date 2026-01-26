@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>November 2025 - Max&#39;s football showreel</title>
+    <meta name="description" content="">
+    <meta name="author" content="None">
+    <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../static/photoswipe.css">
+  <script type="module">
+  import PhotoSwipeLightbox from '/static/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from '/static/photoswipe.esm.min.js';
+  import PhotoSwipeDynamicCaption from '/static/photoswipe-dynamic-caption-plugin.esm.min.js';
+  import PhotoSwipeFullscreen from '/static/photoswipe-fullscreen.esm.min.js';
+  import PhotoSwipeVideoPlugin from '/static/photoswipe-video-plugin.esm.min.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.thumbnail',
+    pswpModule: PhotoSwipe
+  });
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
+  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+  const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.ui.registerElement({
+      name: 'download-button',
+      order: 8,
+      isButton: true,
+      tagName: 'a',
+      html: {
+        isCustomSVG: true,
+        inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+        outlineID: 'pswp__icn-download'
+      },
+      onInit: (el, pswp) => {
+        el.setAttribute('download', '');
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        pswp.on('change', () => {
+          if (pswp.currSlide.data.element.children[0].dataset.big) {
+            el.href = pswp.currSlide.data.element.children[0].dataset.big;
+          } else {
+            el.href = pswp.currSlide.data.src;
+          }
+        });
+      }
+    });
+  });
+
+  lightbox.init();
+  </script>
+    <link rel="stylesheet" href="../static/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="../">Max&#39;s football showreel</a></h1>
+
+
+      <div class="content">
+  <div class="breadcrumb">
+    <h2>
+        <a href=".">November 2025</a></h2>
+  </div>
+  <div class="gallery">
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="0126%281%29.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/0126%281%29.jpg" alt="0126%281%29.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="8780.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/8780.jpg" alt="8780.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="8782.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/8782.jpg" alt="8782.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="8783.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/8783.jpg" alt="8783.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="8784.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/8784.jpg" alt="8784.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="8789.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/8789.jpg" alt="8789.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="8803.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/8803.jpg" alt="8803.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="8807.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/8807.jpg" alt="8807.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="8809.mp4"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/8809.jpg" alt="8809.mp4" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="IMG_8836.webm"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/IMG_8836.jpg" alt="IMG_8836.webm" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="IMG_8842.webm"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/IMG_8842.jpg" alt="IMG_8842.webm" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="IMG_8847.webm"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/IMG_8847.jpg" alt="IMG_8847.webm" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="IMG_8849.webm"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/IMG_8849.jpg" alt="IMG_8849.webm" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="IMG_8851.webm"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/IMG_8851.jpg" alt="IMG_8851.webm" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="IMG_8856.webm"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/IMG_8856.jpg" alt="IMG_8856.webm" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="IMG_8857.webm"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/IMG_8857.jpg" alt="IMG_8857.webm" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail" >
+          <a href="IMG_8858.webm"
+             data-pswp-type="video"
+             data-pswp-width="800"
+             data-pswp-height="600">
+            <img src="thumbnails/IMG_8858.jpg" alt="IMG_8858.webm" />
+          </a>
+          <div class="pswp-caption-content">
+            
+          </div>
+          <figcaption></figcaption>
+        </figure>
+  </div>
+
+      </div>
+
+<footer>
+  <p>
+    <span>Generated by <a href="https://github.com/saimn/sigal">sigal</a></span>
+  </p>
+</footer>  </div>
+  </body>
+</html>
