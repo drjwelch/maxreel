@@ -5,7 +5,7 @@
 # Gallery title. Can be set here or as the '--title' option of the `sigal
 # build` command, or in the 'index.md' file of the source directory.
 # The priority order is: cli option > settings file > index.md file
-title = "Max's football showreel"
+title = "Max's Football Highlights"
 
 # ---------------------
 # General configuration
@@ -34,7 +34,7 @@ theme = "photoswipe"
 # processing steps (resize, auto-orient, recompress, and any plugin-specific
 # step).
 # Originals will be symlinked if orig_link = True, else they will be copied.
-use_orig = True
+# use_orig = True
 
 # Path to a CSS file that can be used to customize themes
 # user_css =
@@ -47,7 +47,7 @@ use_orig = True
 # ----------------
 
 # Size of resized image (default: (640, 480))
-img_size = (800, 600)
+# img_size = (800, 600)
 
 # Max input image size in pixels (default: None, i.e. use PIL default)
 # This option sets `PIL.Image.MAX_IMAGE_PIXELS` in case you want to
@@ -102,7 +102,7 @@ img_size = (800, 600)
 # --------------------
 
 # Generate thumbnails
-make_thumbs = False
+# make_thumbs = False
 
 # Subdirectory of the thumbnails
 # thumb_dir = 'thumbnails'
@@ -114,7 +114,7 @@ make_thumbs = False
 # Thumbnail size (default: (200, 150))
 # For the galleria theme, use 280 px for the width
 # For the colorbox and photoswipe theme, use 200 px for the width
-thumb_size = (280, 210)
+# thumb_size = (280, 210)
 
 # Crop the image to fill the box
 # thumb_fit = True
@@ -176,19 +176,19 @@ ignore_files = []
 video_converter = 'C:\\Users\\jwelch\\AppData\\Local\\Microsoft\\WinGet\\Links\\ffmpeg.exe'
 
 # File extensions that should be treated as video files
-video_extensions = ['.mov', '.avi', '.mp4', '.webm', '.ogv', '.3gp']
+# video_extensions = ['.mov', '.avi', '.mp4', '.webm', '.ogv', '.3gp']
 
 # Video format
 # specify an alternative format, valid are 'webm' (default) and 'mp4'
-video_format = 'webm'
+# video_format = 'webm'
 
 # Webm options
 # Options used in ffmpeg to encode the webm video. You may want to read
 # http://ffmpeg.org/trac/ffmpeg/wiki/vpxEncodingGuide
 # Be aware of the fact these options need to be passed as strings. If you are
 # using avconv (for example with Ubuntu), you will need to adapt the settings.
-webm_options = ['-crf', '10', '-b:v', '1.6M',
-                 '-qmin', '4', '-qmax', '63']
+# webm_options = ['-crf', '10', '-b:v', '1.6M',
+#                  '-qmin', '4', '-qmax', '63']
 
 # Webm options for 2-pass encoding
 # Options used to encode the webm video on the second pass.
