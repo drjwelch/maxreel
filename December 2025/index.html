@@ -21,7 +21,7 @@
     children: '.thumbnail',
     pswpModule: PhotoSwipe
   });
-  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'below'});
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
   const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
   const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
 
@@ -54,6 +54,7 @@
   lightbox.init();
   </script>
     <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/tags.css">
   </head>
   <body>
     <div class="container">
@@ -86,7 +87,8 @@
             <img src="thumbnails/IMG_9178.jpg" alt="IMG_9178.webm" />
           </a>
           <div class="pswp-caption-content">
-            <br><p>Test description</p>
+            <br><p>Test description</p>        <p class="tag-lozenge">december</p>
+
           </div>
           <figcaption></figcaption>
         </figure>

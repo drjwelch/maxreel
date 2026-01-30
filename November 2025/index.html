@@ -21,7 +21,7 @@
     children: '.thumbnail',
     pswpModule: PhotoSwipe
   });
-  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'below'});
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
   const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
   const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
 
@@ -54,6 +54,7 @@
   lightbox.init();
   </script>
     <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/tags.css">
   </head>
   <body>
     <div class="container">
@@ -122,7 +123,9 @@
             <img src="thumbnails/8789.jpg" alt="8789.webm" />
           </a>
           <div class="pswp-caption-content">
-            <br><p>Another description</p>
+            <br><p>Another description</p>        <p class="tag-lozenge">special</p>
+        <p class="tag-lozenge">case</p>
+
           </div>
           <figcaption></figcaption>
         </figure>

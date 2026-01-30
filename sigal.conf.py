@@ -37,7 +37,7 @@ theme = "photoswipe"
 # use_orig = True
 
 # Path to a CSS file that can be used to customize themes
-# user_css =
+user_css = 'tags.css'
 
 # Enable autoplay (galleria only)
 # autoplay = False
