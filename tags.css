@@ -1,12 +1,33 @@
 .tag-lozenge {
-  background-color: #64d3b7;
+  background-color: #afafaf;
   border: none;
   color: black;
-  padding: 0px 2px;
+  padding: 0px 4px;
   text-align: center;
   text-decoration: none;
   font-size: small;
   display: inline-block;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 32px;
+}
+
+.technical {
+  background-color: #e75e4c;
+}
+
+.psychological {
+  background-color: #40da4d;
+}
+
+.physical {
+  background-color: #e9dc2b;
+}
+
+.social {
+  background-color: #3ecae2;
+}
+
+.description-meta {
+  color:#afafaf;
+  font-size:medium
 }
