@@ -4,64 +4,509 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>images - Max&#39;s Football Highlights</title>
-    <meta name="description" content="">
-    <meta name="author" content="None">
+    <title>Player Profile - Max Welch</title>
+    <meta name="description" content="Junior player profile for Max Welch">
+    <meta name="author" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="static/tags.css">
+    <style>
+      .title-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      h1 { text-align: left; margin-left: 0; margin-right: 0; color: #555555; margin: 0; }
+
+      .gallery-button {
+        padding: 10px 20px;
+        background-color: #dddddd;
+        color: #3169B3;
+        text-decoration: none;
+        border: 2px solid #afafaf;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: uppercase;
+        transition: border-color 0.3s ease;
+        animation: pulse-button 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse-button {
+        0%, 100% {
+          box-shadow: 0 0 0 0 rgba(49, 105, 179, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 0 12px rgba(49, 105, 179, 0);
+        }
+      }
+
+      .gallery-button:hover {
+        border-color: #808080;
+        animation: none;
+      }
+
+      .profile-section {
+        background: white;
+        margin: 24px auto;
+        padding: 24px;
+        max-width: 1024px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .highlight-wrapper {
+        display: grid;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .highlight-text {
+        grid-column: 1;
+      }
+
+      .highlight-4corner {
+        grid-column: 2;
+      }
+
+      .profile-wrapper {
+        display: grid;
+        grid-template-columns: 250px 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .profile-photo {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        width: 100%;
+      }
+
+      .profile-photo img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      }
+
+      .profile-info {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .teams-wrapper {
+        grid-column: 3;
+        grid-row: 1 / 3;
+        width: 100%;
+      }
+
+      .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .profile-item {
+        background: #F7F7F7;
+        padding: 16px;
+        border-radius: 4px;
+        border-left: 4px solid #3169B3;
+      }
+
+      .profile-item-label {
+        font-size: 12px;
+        color: #afafaf;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .profile-item-value {
+        font-size: 14px;
+        color: #282B30;
+        font-weight: 600;
+      }
+
+      .teams-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .team-card {
+        background: #F7F7F7;
+        padding: 10px;
+        border-radius: 4px;
+        border-left: 4px solid #3169B3;
+      }
+
+      .team-name {
+        font-size: 14px;
+        color: #282B30;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .team-details {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .team-detail {
+        font-size: 12px;
+      }
+
+      .team-detail-label {
+        color: #282B30;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .team-detail-value {
+        color: #afafaf;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .gallery-section {
+        max-width: 1024px;
+        margin: 24px auto;
+      }
+
+      .photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+        width: 100%;
+      }
+
+      .photo-item {
+        text-align: center;
+      }
+
+      .photo-item img {
+        max-width: 100%;
+        height: auto;
+        border: 10px solid #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 3px #B1B1B1;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .photo-item img:hover {
+        box-shadow: 0 0 5px #818181;
+      }
+
+      .photo-caption {
+        font-size: 11px;
+        color: #afafaf;
+        margin-top: 8px;
+      }
+
+      .profile-section ul {
+        margin-top: 16px;
+        color: #555;
+      }
+
+      .profile-section li {
+        color: #555;
+      }
+
+      .photo-reel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin-top: 16px; /* small gap below the Photo Reel heading */
+      }
+
+      .photo-reel {
+        display: flex;
+        gap: 16px;
+        animation: scroll 32s linear infinite;
+        width: 100%;
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-440%); }  /* 440% and above 32s together create a smooth scroll */
+      }
+
+      .reel-item {
+        flex: 0 0 calc((100% - 32px) / 3); /* three items with 16px gaps */
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      }
+
+      .reel-item {
+        flex: 0 0 calc((100% - 32px) / 3); /* three items with 16px gaps */
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .reel-thumb {
+        flex: 1 1 auto;
+        display: block;
+        overflow: hidden;
+        aspect-ratio: 16 / 9; /* force thumbnails to 16:9 */
+      }
+
+      .reel-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      
+      @media screen and (max-width: 700px) {
+        .reel-item {
+          flex: 0 0 calc((100% - 16px) / 2); /* two items */
+        }
+      }
+
+      .reel-caption {
+        font-size: 12px;
+        color: #555;
+        text-align: center;
+        padding: 6px 8px 8px 8px;
+        background: transparent;
+        flex: 0 0 auto;
+      }
+
+      @media screen and (max-width: 500px) {
+        .reel-item {
+          flex: 0 0 100%; /* one item */
+        }
+      }
+
+      
+
+      .about-section {
+        background: white;
+        margin: 24px auto;
+        padding: 24px;
+        max-width: 1024px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .about-section p {
+        margin-bottom: 16px;
+        line-height: 24px;
+        text-align: justify;
+        font-size: 16px;
+      }
+
+      .stats-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .stats-list-item {
+        display: flex;
+        padding: 12px;
+        background: #F7F7F7;
+        border-radius: 4px;
+        border-left: 4px solid #3169B3;
+      }
+
+      .stats-list-item-label {
+        font-weight: 600;
+        color: #282B30;
+        min-width: 150px;
+      }
+
+      .stats-list-item-value {
+        color: #282B30;
+      }
+
+      @media screen and (max-width: 700px) {
+        .profile-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-photo {
+          grid-column: 1;
+          grid-row: 1;
+          width: 100%;
+        }
+
+        .profile-info {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .teams-wrapper {
+          grid-column: 1;
+          grid-row: 3;
+        }
+
+        .team-details {
+          grid-template-columns: 1fr;
+        }
+
+        .photo-gallery {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .profile-section,
+        .about-section,
+        .gallery-section {
+          margin: 12px;
+          padding: 16px;
+        }
+
+        .profile-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .photo-gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1><a href="./">Max&#39;s Football Highlights</a></h1>
 
+      <!-- Profile Section -->
+      <div class="profile-section">
+      <div class="title-bar">
+        <h1>Max Welch - Player Profile</h1>
+        <a href="gallery.html" class="gallery-button">Video Gallery</a>
+      </div>
+        <div class="profile-wrapper">
+          <div class="profile-photo">
+            <img src="./profile-pic.jpeg" alt="Player photo">
+            <p style="font-size: 12px; color: #afafaf; margin-top: 8px; text-align: center;">First of three tournament wins for Altrincham in 2024/5 season</p>
+          </div>
+          <div class="profile-info">
+            <h3 style="font-size: 18px; color: #282B30; margin-bottom: 16px; font-weight: 600; border-bottom: 2px solid #3169B3; padding-bottom: 8px;">Profile</h3>
+            <div class="profile-grid">
+              <div class="profile-item">
+                <div class="profile-item-label">Name</div>
+                <div class="profile-item-value">Max Welch</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-item-label">DOB</div>
+                <div class="profile-item-value">04/09/2014 (U11)</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-item-label">Height</div>
+                <div class="profile-item-value">1.60 m</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-item-label">Weight</div>
+                <div class="profile-item-value">45 kg</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-item-label">FA Number</div>
+                <div class="profile-item-value">XXXXXXXX</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-item-label">Parent Phone</div>
+                <div class="profile-item-value">07796 267437</div>
+              </div>
+            </div>
+          </div>
+          <div class="teams-wrapper">
+            <h3 style="font-size: 18px; color: #282B30; margin-bottom: 16px; font-weight: 600; border-bottom: 2px solid #3169B3; padding-bottom: 8px;">Teams</h3>
+            <div class="teams-container">
+              <div class="team-card">
+                <div class="team-name">Altrincham FC Juniors</div>
+                <div class="team-details">
+                  <div class="team-detail-value">Timperley & District League</div>
+                  <div class="team-detail-value">First Team, Top Division</div>
+                </div>
+              </div>
 
-      <div class="content">
-  <div class="album-list">
-    <div class="menu-img thumbnail">
-      <a href="December%202025/">
-        <img src="December%202025/thumbnails/8976.jpg" class="album_thumb"
-             alt="December 2025" title="December 2025" /></a>
-      <span class="album_title">December 2025</span>
-    </div>
-    <div class="menu-img thumbnail">
-      <a href="February%202026/">
-        <img src="February%202026/thumbnails/IMG_9426.jpg" class="album_thumb"
-             alt="February 2026" title="February 2026" /></a>
-      <span class="album_title">February 2026</span>
-    </div>
-    <div class="menu-img thumbnail">
-      <a href="January%202026/">
-        <img src="January%202026/thumbnails/9245.jpg" class="album_thumb"
-             alt="January 2026" title="January 2026" /></a>
-      <span class="album_title">January 2026</span>
-    </div>
-    <div class="menu-img thumbnail">
-      <a href="November%202025/">
-        <img src="November%202025/thumbnails/8777.jpg" class="album_thumb"
-             alt="November 2025" title="November 2025" /></a>
-      <span class="album_title">November 2025</span>
-    </div>
-    <div class="menu-img thumbnail">
-      <a href="October%202025/">
-        <img src="October%202025/thumbnails/8587.jpg" class="album_thumb"
-             alt="October 2025" title="October 2025" /></a>
-      <span class="album_title">October 2025</span>
-    </div>
-    <div class="menu-img thumbnail">
-      <a href="September%202025/">
-        <img src="September%202025/thumbnails/8474.jpg" class="album_thumb"
-             alt="September 2025" title="September 2025" /></a>
-      <span class="album_title">September 2025</span>
-    </div>
-  </div>
+              <div class="team-card">
+                <div class="team-name">Partington & Carrington FC</div>
+                <div class="team-details">
+                  <div class="team-detail-value">Manchester Youth Sunday League</div>
+                  <div class="team-detail-value">Championship</div>
+                </div>
+              </div>
 
+              <div class="team-card">
+                <div class="team-name">Willows Primary School</div>
+                <div class="team-details">
+                  <div class="team-detail-value">Regional School Cup Competitions</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-<footer>
-  <p>
-    <span>Generated by <a href="https://github.com/saimn/sigal">sigal</a></span>
-  </p>
-</footer>  </div>
+      <!-- Photo Gallery Section -->
+      <div class="profile-section">
+        <div class="highlight-wrapper">
+          <div class="highlight-text">
+            <h2>Highlights & Successes</h2>
+            <ul>
+              <li>3 x tournament winners with Altrincham FC 2024/5</li>
+              <li>Voted Altrincham FC "Player's Player" in his first season</li>
+              <li>MCFC School Holiday Camp 2025 "Player of the Week"</li>
+              <li>Accomplished sprinter and long-jumper for primary school</li>
+              <li>Strengths in all four corners: see <a href="gallery.html">video gallery</a> examples</li>
+            </ul>
+          </div>
+          <div class="highlight-4corner">
+            <img src="four-corners.jpg" alt="FA Four Corner Model" style="display: block; margin: auto; width: 50%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo Reel Section -->
+      <div class="profile-section">
+        <h2>Photo Reel</h2>
+        <div class="photo-reel-container">
+          <div class="photo-reel" id="photoReel">
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2024-11-01_15-03-15_489.jpg" alt="Photo"></div><div class="reel-caption">MCFC October Camp - Player of the Week</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-04-06_13-08-16_000 (2025-04-06T17_55_10.114).jpeg" alt="Photo"></div><div class="reel-caption">Altrincham Athletics Club U11<br>Long Jump Gold Medal</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-05-31_13-41-35_000.jpeg" alt="Photo"></div><div class="reel-caption">Urmston Meadowside Football Festival Winner</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-06-07_13-30-04_077.jpg" alt="Photo"></div><div class="reel-caption">Flixton Juniors Tournament Winner 2025</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-06-27_15-05-27_605.jpg" alt="Photo"></div><div class="reel-caption">Primary school track 200m winner</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-12-30_11-33-51_000.jpeg" alt="Photo"></div><div class="reel-caption">Partington & Carrington 'Purples' at Macclesfield Tournament</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-08-02_14-33-45_000.jpeg" alt="Photo"></div><div class="reel-caption">Egerton FC Tournament Winners</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-10-05_21-20-41_330.jpeg" alt="Photo"></div><div class="reel-caption">Macclesfield FC Tournament</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-06-08_15-36-43_000.png" alt="Photo"></div><div class="reel-caption">Altrincham FC Titans 2025<br>Flixton Juniors Tournament Winners</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-10-10_15-26-48_100.jpg" alt="Photo"></div><div class="reel-caption">Primary school football tournament winners</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-02-21_13-36-19_786.jpg" alt="Photo"></div><div class="reel-caption">MCFC Easter Camp</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-10-11_11-28-18_000.jpeg" alt="Photo"></div><div class="reel-caption">Altrincham FC U11 'Titans' 2025</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2026-02-01_19-21-43_000.jpeg" alt="Photo"></div><div class="reel-caption">Partington & Carrington 'Purples'</div></div>
+            <!-- Duplicates for smooth scroll -->
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2024-11-01_15-03-15_489.jpg" alt="Photo"></div><div class="reel-caption">MCFC October Camp - Player of the Week</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-04-06_13-08-16_000 (2025-04-06T17_55_10.114).jpeg" alt="Photo"></div><div class="reel-caption">Altrincham Athletics Club U11<br>Long Jump Gold Medal</div></div>
+            <div class="reel-item"><div class="reel-thumb"><img src="carousel/2025-05-31_13-41-35_000.jpeg" alt="Photo"></div><div class="reel-caption">Urmston Meadowside Football Festival Winner</div></div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          <span>Max Welch - Player Profile</span>
+        </p>
+      </footer>
+
+    </div>
   </body>
 </html>

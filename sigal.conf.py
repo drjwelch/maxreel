@@ -5,7 +5,7 @@
 # Gallery title. Can be set here or as the '--title' option of the `sigal
 # build` command, or in the 'index.md' file of the source directory.
 # The priority order is: cli option > settings file > index.md file
-title = "Max's Football Highlights"
+title = "Max Welch - Football Gallery"
 
 # ---------------------
 # General configuration
@@ -224,10 +224,10 @@ video_converter = 'C:\\Users\\jwelch\\AppData\\Local\\Microsoft\\WinGet\\Links\\
 # write_html = True
 
 # Name of the generated HTML files
-# output_filename = 'index.html'
+output_filename = 'gallery.html'
 
 # Add output filename (see above) to the URLs
-# index_in_url = False
+index_in_url = True
 
 # A list of links (tuples (title, URL))
 # links = [('Example link', 'http://example.org'),
