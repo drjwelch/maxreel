@@ -38,11 +38,13 @@ Builds `.md` file for each image so that sigal can consume it
 Added the first line to Jinja code:
 
 ```
-      <a href="/">Home</a> » <a href="/gallery.html">Galleries</a> » 
+      <a href="../index.html">Home</a> » <a href="../gallery.html">Galleries</a> » 
       {% for url, title in album.breadcrumb %}
         <a href="{{ url }}">{{ title }}</a>{% if not loop.last %} » {% endif %}
       {% endfor -%}
 ```
+
+This will stop working if we ever have nested galleries because .. won't navigate to home.  We can't hard-code it as / because the root url depends on where it's hosted (local is / but on github pages it's /maxreel).
 
 ### Defining image tags
 
