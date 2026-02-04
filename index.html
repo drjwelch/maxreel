@@ -51,24 +51,12 @@
       .profile-section {
         background: white;
         margin: 24px auto;
+        margin-bottom: 10px;
         padding: 24px;
+        padding-bottom: 4px;
         max-width: 1024px;
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-
-      .highlight-wrapper {
-        display: grid;
-        gap: 30px;
-        align-items: start;
-      }
-
-      .highlight-text {
-        grid-column: 1;
-      }
-
-      .highlight-4corner {
-        grid-column: 2;
       }
 
       .profile-wrapper {
@@ -172,6 +160,25 @@
         color: #afafaf;
         font-size: 12px;
         font-weight: 600;
+      }
+
+      .highlight-wrapper {
+        display: grid;
+        gap: 4px;
+        align-items: start;
+        font-size: 14px;
+      }
+
+      .highlight-text {
+        grid-column: 3;
+      }
+
+      .highlight-4corner {
+        grid-column: 2;
+      }
+
+      .highlight-whyme {
+        grid-column: 1;
       }
 
       .gallery-section {
@@ -459,18 +466,28 @@
       <!-- Photo Gallery Section -->
       <div class="profile-section">
         <div class="highlight-wrapper">
+          <div class="highlight-whyme">
+            <h2>How I Contribute <a href="gallery.html">(Examples)</a></h2>
+            <ul>
+              <li>Pace and stamina</li>
+              <li>Leadership</li>
+              <li>Good 'weak' foot skills</li>
+              <li>Choice of pass and accuracy</li>
+              <li>Create chances for others and myself</li>
+            </ul>
+          </div>
+          <div class="highlight-4corner">
+            <img src="four-corners.jpeg" alt="FA Four Corner Model" style="display: block; margin: auto; width: 50%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+          </div>
           <div class="highlight-text">
             <h2>Highlights & Successes</h2>
             <ul>
               <li>3 x tournament winners with Altrincham FC 2024/5</li>
               <li>Voted Altrincham FC "Player's Player" in his first season</li>
+              <li>Primary school regional finals 2026 (MUFC Foundation)</li>
               <li>MCFC School Holiday Camp 2025 "Player of the Week"</li>
               <li>Accomplished sprinter and long-jumper for primary school</li>
-              <li>Strengths in all four corners: see <a href="gallery.html">video gallery</a> examples</li>
             </ul>
-          </div>
-          <div class="highlight-4corner">
-            <img src="four-corners.jpeg" alt="FA Four Corner Model" style="display: block; margin: auto; width: 50%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
           </div>
         </div>
       </div>
