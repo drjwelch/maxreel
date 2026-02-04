@@ -148,10 +148,10 @@ user_css = 'tags.css'
 
 # Attribute of Album objects which is used to sort medias (eg 'title'). To
 # sort on a metadata key, use 'meta.key'.
-# albums_sort_attr = 'name'
+albums_sort_attr = 'title'
 
 # Reverse sort for albums
-# albums_sort_reverse = False
+albums_sort_reverse = True
 
 # Attribute of Media objects which is used to sort medias. 'date' can be used
 # to sort with EXIF dates, and 'meta.key' to sort on a metadata key (which then

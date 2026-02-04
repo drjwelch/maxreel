@@ -35,16 +35,17 @@ Builds `.md` file for each image so that sigal can consume it
 
 `venv/Lib/sigal/themes/default/templates/breadcrumb.html`
 
-Added the first line to Jinja code:
+Added the first two lines to Jinja code to put Home and Gallery (list) onto breadcrumb (allowing for depth which changes depending on where we're deployed):
 
 ```
-      <a href="../index.html">Home</a> » <a href="../gallery.html">Galleries</a> » 
+      {% set depth, slash = (album.breadcrumb|length, 1) if album.breadcrumb else (0, 0) %}
+      <a href="{{'..'*depth}}{{'/'*slash}}index.html">Home</a> » <a href="{{'..'*depth}}{{'/'*slash}}gallery.html">Galleries</a> » 
+{% if album.breadcrumb %}
       {% for url, title in album.breadcrumb %}
         <a href="{{ url }}">{{ title }}</a>{% if not loop.last %} » {% endif %}
       {% endfor -%}
+{% endif %}
 ```
-
-This will stop working if we ever have nested galleries because .. won't navigate to home.  We can't hard-code it as / because the root url depends on where it's hosted (local is / but on github pages it's /maxreel).
 
 ### Defining image tags
 
@@ -67,12 +68,31 @@ Added the following Jinja code to show tags under captions:
   {%- endif -%}
 ```
 
-### Styling tags
+### Showing tag colours and intro text on albums
+
+`venv/Lib/sigal/themes/photoswipe/templates/album.html`
+
+Changed the figcaption (which has a bug referenceing media_description instead of media.description) to add the tag colour blobs:
+```
+          <figcaption style="display: block;">
+  {%- if media.meta.tags -%}
+    {% set tags = media.meta.tags[0].split(';') %}
+    {% for tag in tags %}
+        <p class="tag-lozenge {{tag}}">&nbsp;&nbsp;&nbsp;</p>
+    {% endfor %}
+  {%- endif -%}
+          </figcaption>
+```
+In this file and `album_list.html` (the root level) some intro text and the tag lozenges are added at the top.
+
+### Styling tags and header
 
 `tag.css`
 
 Defines `.tag` class for tag styling as lozenge
 Added to root of repo and referenced in `sigal.conf.py` as `user_css=`
+
+Modifies the h1 style to reduce margin below
 
 ### Optional caption placement control
 
