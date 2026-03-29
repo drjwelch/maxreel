@@ -36,7 +36,7 @@ Builds `.md` file for each image so that sigal can consume it
 `venv/Lib/sigal/themes/default/templates/breadcrumb.html`
 
 Added the first two lines to Jinja code to put Home and Gallery (list) onto breadcrumb (allowing for depth which changes depending on where we're deployed):
-
+ 
 ```
       {% set depth, slash = (album.breadcrumb|length, 1) if album.breadcrumb else (0, 0) %}
       <a href="{{'..'*depth}}{{'/'*slash}}index.html">Home</a> » <a href="{{'..'*depth}}{{'/'*slash}}gallery.html">Galleries</a> » 
